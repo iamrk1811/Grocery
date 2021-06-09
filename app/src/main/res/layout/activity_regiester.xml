@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/regi"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="REGISTER PAGE"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:textColor="#EA0D3A"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ENTER YOUR NAME"
+        android:textSize="20dp"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:background="@drawable/press_bg"
+        android:padding="10dp"
+       android:drawablePadding="10dp"
+        android:layout_marginTop="20dp"
+        android:textColorHint="@color/white"
+        android:layout_marginHorizontal="30dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ENTER YOUR MOBILE NUMBER"
+        android:textSize="19dp"
+        android:drawableLeft="@drawable/mobile_friendly_24"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:background="@drawable/press_bg"
+        android:padding="10dp"
+        android:drawablePadding="10dp"
+        android:layout_marginTop="20dp"
+        android:textColorHint="@color/white"
+        android:layout_marginHorizontal="30dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ENTER YOUR EMAIL ADDRESS"
+        android:drawableLeft="@drawable/email_24"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:background="@drawable/press_bg"
+        android:padding="10dp"
+        android:drawablePadding="10dp"
+        android:layout_marginTop="20dp"
+        android:textColorHint="@color/white"
+        android:layout_marginHorizontal="30dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CREAT YOUR PASSWORD"
+        android:textSize="20dp"
+        android:drawableLeft="@drawable/security_24"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:background="@drawable/press_bg"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        android:drawablePadding="10dp"
+        android:textColorHint="@color/white"
+        android:layout_marginHorizontal="30dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="RECHECKED PASSWORD"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:drawableLeft="@drawable/security_24"
+        android:background="@drawable/press_bg"
+        android:padding="10dp"
+        android:drawablePadding="10dp"
+        android:layout_marginTop="20dp"
+        android:textColorHint="@color/white"
+        android:layout_marginHorizontal="30dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ENTER CITY AND ADDRESS"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:background="@drawable/press_bg"
+        android:padding="10dp"
+        android:drawableLeft="@drawable/location_city_24"
+        android:layout_marginTop="20dp"
+        android:drawablePadding="20dp"
+        android:textColorHint="@color/white"
+        android:layout_marginHorizontal="28dp"
+        />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="90dp"
+        android:text="I AGREE ALL TERMS AND CONDITIONS"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/button_bg"
+        android:text="REGISTER HERE"
+        android:textSize="20dp" />
+
+
+
+</LinearLayout>
+
+
+
