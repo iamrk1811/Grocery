@@ -93,8 +93,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String uReenterPassword = userReenterPassword.getText().toString().trim();
 
 //                user validation
-//                if (userValidate(uFullName, uEmail, uMobile, uPassword, uReenterPassword)) {
-                if (true) {
+                if (userValidate(uFullName, uEmail, uMobile, uPassword, uReenterPassword)) {
                     if (!isUserAlreadyExist(uEmail, uMobile)) { // if user already exist
 
                         String phoneNumber = "+91" + uMobile;
@@ -259,6 +258,6 @@ public class RegisterActivity extends AppCompatActivity {
             validate = false;
         }
 
-        return true;
+        return validate;
     }
 }
