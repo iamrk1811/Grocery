@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
@@ -25,8 +26,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -85,8 +89,8 @@ public class RegisterActivity extends AppCompatActivity {
                 String uFullName = userFullName.getText().toString().trim();
                 String uEmail = userEmail.getText().toString().trim();
                 String uMobile = userMobile.getText().toString().trim();
-                String uPassword = userPassword.getText().toString();
-                String uReenterPassword = userReenterPassword.getText().toString();
+                String uPassword = userPassword.getText().toString().trim();
+                String uReenterPassword = userReenterPassword.getText().toString().trim();
 
 //                user validation
 //                if (userValidate(uFullName, uEmail, uMobile, uPassword, uReenterPassword)) {
@@ -133,7 +137,7 @@ public class RegisterActivity extends AppCompatActivity {
                                                 otpDialog.setView(userOTP);
 
                                                 otpDialog.setPositiveButton(
-                                                        "Yes",
+                                                        "Verify",
                                                         new DialogInterface.OnClickListener() {
                                                             public void onClick(DialogInterface dialog, int id) {
                                                                 String userEnteredOTP = userOTP.getText().toString().trim();
@@ -144,8 +148,29 @@ public class RegisterActivity extends AppCompatActivity {
                                                                     @Override
                                                                     public void onComplete(@NonNull Task<AuthResult> task) {
                                                                         if (task.isSuccessful()) {
-                                                                            startActivity(new Intent(RegisterActivity.this, UserDashBoard.class));
-                                                                            finish();
+
+                                                                            userRegistrationProgressBar.setVisibility(View.VISIBLE);
+                                                                            userRegisterButton.setClickable(false);
+
+                                                                            // save the information about users
+                                                                            DocumentReference documentReference = fStore.collection("users").document(fAuth.getCurrentUser().getUid());
+
+                                                                            Map<String, Object> user = new HashMap<>();
+                                                                            user.put("FullName", uFullName);
+                                                                            user.put("email", uEmail);
+                                                                            user.put("mobile", uMobile);
+                                                                            user.put("password", uPassword);
+
+                                                                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                                                @Override
+                                                                                public void onSuccess(Void unused) {
+                                                                                    startActivity(new Intent(RegisterActivity.this, UserDashBoard.class));
+                                                                                    finish();
+                                                                                }
+                                                                            });
+                                                                        } else {
+                                                                            dialog.cancel();
+                                                                            Toast.makeText(RegisterActivity.this, "Something went wrong !", Toast.LENGTH_SHORT).show();
                                                                         }
                                                                     }
                                                                 });

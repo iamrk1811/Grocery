@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
         textViewUserCreateAccount = findViewById(R.id.userLoginCreateAccountTextView);
         textViewUserForgotPassword = findViewById(R.id.userForgotPasswordTextView);
 
-
+//      go to register page if already have an account
         textViewUserCreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
