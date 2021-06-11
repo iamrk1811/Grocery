@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "292309228431",
+    "project_id": "egrocery-33256",
+    "storage_bucket": "egrocery-33256.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:292309228431:android:3e512dbcbb62462b6cc9fa",
+        "android_client_info": {
+          "package_name": "in.csrk.egrocery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "292309228431-43vdn7sco6d0qspfvf52guq35deiq68v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDr5R3b0-Hx2T96_FKIc8nJILbTF1q9ZBQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "292309228431-43vdn7sco6d0qspfvf52guq35deiq68v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
